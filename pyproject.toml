@@ -9,6 +9,7 @@ description = "Turn stack traces into root causes: parse five languages, cluster
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
+license-files = ["LICENSE"]
 authors = [{ name = "kele", email = "guoshiyin0609@gmail.com" }]
 keywords = ["debugging", "stacktrace", "observability", "cli", "incident-response", "logs"]
 classifiers = [
