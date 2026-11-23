@@ -1,5 +1,7 @@
 # crashlens
 
+**English** | [简体中文](README.zh-CN.md)
+
 **From stack trace to root cause in one command:** parse the traceback, cluster it against every other crash in the log, open the exact source line and blame the commit that introduced it.
 
 [![ci](https://github.com/kele-tao/crashlens/actions/workflows/ci.yml/badge.svg)](https://github.com/kele-tao/crashlens/actions/workflows/ci.yml)
