@@ -159,11 +159,11 @@ $ crashlens parse examples/python_error.log --limit 1 --max-frames 3
 2 crashes parsed (showing 1)
 
 #1 Python  2025-02-14 09:15  python_error.log:4
-  cause  KeyError: <value>
+  root cause  KeyError: <value>
       /srv/acme/app/http/handler.py:118  handle_checkout
       /srv/acme/app/pipeline.py:28  enrich
       /srv/acme/app/pipeline.py:20  pick_sku
-    caused by  RuntimeError: order enrichment failed for checkout
+    wrapped by  RuntimeError: order enrichment failed for checkout
         /srv/acme/app/http/handler.py:118  handle_checkout
         /srv/acme/app/pipeline.py:29  enrich
         /srv/acme/app/pipeline.py:30  enrich
@@ -299,6 +299,21 @@ a checkout, and one command.
   crosses a threshold.
 - Optional `sourcemap` resolution for minified Node bundles (out of scope for
   v1.0; the current Node handler annotates the pre-bundled path as printed).
+
+## Testing
+
+```console
+$ pytest -q
+107 passed in 3.77s
+$ python -m coverage run --source=src/crashlens -m pytest -q && python -m coverage report
+TOTAL                           1528    151    90%
+```
+
+The suite covers all five parsers (including chained exceptions and the
+`... N more` elisions), fingerprint stability, ranking determinism, the twelve
+heuristics, repository matching, git blame, the blame-since correlation, every
+documented flag, both non-zero exit codes, unicode input (CJK + emoji), hostile
+HTML input and a 300-crash log. Tests never touch the network.
 
 ## Contributing
 

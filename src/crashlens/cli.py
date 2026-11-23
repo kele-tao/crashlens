@@ -208,7 +208,9 @@ def render_crash(crash: Crash, painter: Painter, max_frames: int) -> list[str]:
     out: list[str] = []
     segments = crash.chain
     for depth, segment in enumerate(segments):
-        label = "cause" if depth == 0 else "caused by"
+        # The chain is printed root-cause-first: chain[0] is the exception that
+        # actually broke, the following segments wrap it.
+        label = "root cause" if depth == 0 else "wrapped by"
         head = segment.exception_type
         if segment.message:
             head += ": " + normalise_message(segment.message)
