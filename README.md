@@ -119,16 +119,14 @@ window  2025-02-14 09:15:03 .. 2025-02-14 09:52:09
    message   Cannot read properties of undefined (reading <value>)
    actionable /srv/acme/handlers/checkout.js:8 (handleCheckout)
    root cause A value assumed to be present came back None  [none-optional]
-   next step  Guard the optional value before use: default it at the boundary, or raise a
-              typed error carrying the request id instead of letting None travel three frames.
+   next step  Guard the optional value before use: default it at the boundary, or raise a typed error carrying the request id instead of letting None travel three frames.
 
 #3 RuntimeError at srv/acme/app/pipeline.py  2x  2025-02-14 09:15 -> 2025-02-14 09:18  python
    message   order enrichment failed for checkout
    chain     RuntimeError <- KeyError
    actionable /srv/acme/app/pipeline.py:20 (pick_sku)
    root cause Code indexes a mapping key that the payload does not contain  [missing-key]
-   next step  Validate the payload against an explicit schema at the parse boundary, then read
-              it through dict.get or a dataclass so absence becomes a named error.
+   next step  Validate the payload against an explicit schema at the parse boundary, then read it through dict.get or a dataclass so absence becomes a named error.
 ```
 
 `--json` emits the same data deterministically (sorted keys, two-space indent), and
