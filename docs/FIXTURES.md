@@ -21,8 +21,8 @@ OpenJDK 17, Go 1.x and Rust 1.7x.
 
 | Commit | Date | Author | Subject |
 | --- | --- | --- | --- |
-| `3ab7b0b` | 2025-01-06 | Alice Chen | feat: order enrichment pipeline with JSON decoding |
-| `61444e8` | 2025-02-11 | Priya Nair | refactor: trust partner payload in pick_sku |
+| `4a72acf` | 2025-01-06 | Alice Chen | feat: order enrichment pipeline with JSON decoding |
+| `a56bbe2` | 2025-02-11 | Priya Nair | refactor: trust partner payload in pick_sku |
 
 The regression is in `pipeline.py`: commit one guards `document.get("items") or []`,
 commit two replaces it with `document["items"]`. The crash logs are timestamped

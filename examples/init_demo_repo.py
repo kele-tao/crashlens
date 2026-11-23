@@ -122,7 +122,9 @@ def main(argv: list[str]) -> int:
     run(["config", "user.name", COMMITS[0][0]], env)
     run(["config", "user.email", COMMITS[0][1]], env)
     for name, email, when, summary, source in COMMITS:
-        PIPELINE.write_text(source, encoding="utf-8")
+        # newline="\n" keeps the blob identical on Windows and Linux, so the
+        # commit hashes quoted in the README and docs are reproducible.
+        PIPELINE.write_text(source, encoding="utf-8", newline="\n")
         env.update(
             {
                 "GIT_AUTHOR_NAME": name,

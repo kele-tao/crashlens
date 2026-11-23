@@ -92,7 +92,7 @@ where  pipeline.py:20  in  pick_sku
   22 |         return ""
   23 |     return items[0]["sku"]
 
-blame   61444e8 by Priya Nair on 2025-02-11 - refactor: trust partner payload in pick_sku
+blame   a56bbe2 by Priya Nair on 2025-02-11 - refactor: trust partner payload in pick_sku
 timing  first seen 2025-02-14 09:15:03.004000 (3 days after that commit)
 ```
 
@@ -142,10 +142,10 @@ window  2025-02-14 09:15:03 .. 2025-02-14 09:52:09
 
 ```console
 $ crashlens blame-since HEAD~1 examples --repo examples/demo_repo
-deploy window  HEAD~1 -> HEAD (3ab7b0b)  1 commit, 1 file changed
-  61444e8 2025-02-11 09:30 Priya Nair  refactor: trust partner payload in pick_sku
+deploy window  HEAD~1 -> HEAD (4a72acf)  1 commit, 1 file changed
+  a56bbe2 2025-02-11 09:30 Priya Nair  refactor: trust partner payload in pick_sku
 
-pipeline.py  61444e8 2025-02-11  1 cluster
+pipeline.py  a56bbe2 2025-02-11  1 cluster
      2x  6a97c983220d  RuntimeError at srv/acme/app/pipeline.py
          order enrichment failed for checkout
 
