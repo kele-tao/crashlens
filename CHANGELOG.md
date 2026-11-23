@@ -33,7 +33,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Documented exit codes: 0 report produced, 1 nothing matched, 2 usage error.
 - Benchmark harness (`benchmarks/run.py`) that writes `results.json` and
   `RESULTS.md`; 10k crash records parse and cluster in about one second.
-- 107 pytest tests covering all five parsers, clustering, heuristics, repository
+- 114 pytest tests covering all five parsers, clustering, heuristics, repository
   matching, CLI contract and renderers.
 
 [Unreleased]: https://github.com/kele-tao/crashlens/compare/v1.0.0...HEAD
