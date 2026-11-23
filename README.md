@@ -131,6 +131,8 @@ window  2025-02-14 09:15:03 .. 2025-02-14 09:52:09
    next step  Validate the payload against an explicit schema at the parse boundary, then read it through dict.get or a dataclass so absence becomes a named error.
 ```
 
+![crashlens cluster: ranked fingerprints with bars](docs/cluster.png)
+
 `--json` emits the same data deterministically (sorted keys, two-space indent), and
 `--html out/report.html` writes a single self-contained file:
 
