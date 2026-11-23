@@ -1,5 +1,5 @@
 name: ci
-on: [push, pull_request]
+"on": [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,6 +13,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: pip install -e ".[dev]"
       - run: ruff check .
+      - run: python examples/init_demo_repo.py
       - run: pytest -q
       - run: python -m crashlens --help
       - run: python -m crashlens cluster examples --repo examples/demo_repo --top 3
+      - run: python -m crashlens annotate examples/python_error.log --repo examples/demo_repo
