@@ -1,0 +1,16 @@
+2025-02-14 09:31:02,441 ERROR http-nio-8080-exec-7 Servlet.service() threw exception
+java.lang.NullPointerException: Cannot invoke "String.trim()" because "sku" is null
+	at com.acme.OrderService.firstSku(OrderService.java:8)
+	at com.acme.OrderController.checkout(OrderController.java:41)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:897)
+	... 24 more
+Caused by: java.lang.IllegalStateException: order arrived without sku
+	at com.acme.OrderController.parse(OrderController.java:55)
+	at com.acme.OrderController.checkout(OrderController.java:39)
+	... 31 more
+2025-02-14 09:31:09,117 ERROR http-nio-8080-exec-9 Servlet.service() threw exception
+java.lang.NullPointerException: Cannot invoke "String.trim()" because "sku" is null
+	at com.acme.OrderService.firstSku(OrderService.java:8)
+	at com.acme.OrderController.checkout(OrderController.java:41)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:897)
+	... 24 more

@@ -1,0 +1,46 @@
+name: Feature request
+description: Propose a new command, renderer or parser
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: Describe the incident workflow that is painful today, not the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: What should crashlens print or do? A sketch of the command line helps.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - parser (new runtime or format)
+        - clustering / fingerprinting
+        - heuristics
+        - annotate / blame
+        - blame-since
+        - renderers (terminal, JSON, HTML)
+        - docs / packaging
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing tools or workarounds, and why they are not enough.
+    validations:
+      required: false
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: This can be implemented with the Python standard library only
+          required: false

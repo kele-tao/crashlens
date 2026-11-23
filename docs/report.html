@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang=en><head><meta charset=utf-8>
+<title>crashlens report</title>
+<style>
+body{margin:0;background:#0b0f17;color:#d1d5db;
+font:15px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+header{padding:28px 32px;border-bottom:1px solid #1f2937}
+h1{margin:0 0 6px;font-size:24px;color:#f8fafc}
+.sub{color:#8b9bb4}
+main{padding:24px 32px 40px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin-top:18px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid #1b2432;vertical-align:middle}
+th:last-child,td:last-child{padding-right:28px}
+th{color:#93c5fd;font-weight:600;font-size:13px;text-transform:uppercase}
+td.num{color:#fbbf24;font-weight:700}
+.mono{color:#e5e7eb}
+.hint{color:#8b9bb4}
+.msg{color:#9ca3af;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.when{color:#8b9bb4;font-size:13px;white-space:nowrap}
+.barcell{white-space:nowrap}
+.hintcell{color:#8b9bb4;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg{color:#9ca3af;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{fill:#8b9bb4;font:11px ui-monospace}
+footer{padding:18px 32px;color:#6b7280;border-top:1px solid #1f2937;font-size:12px}
+</style></head><body>
+<header><h1>crashlens report</h1>
+<div class=sub>9 crashes, 6 clusters  |  go 1, java 2, node 2, python 2, rust 2  |  repo D:\代码\GitHub代码\crashlens\examples\demo_repo</div></header>
+<main><table><thead><tr><th>#</th><th>count</th><th>cluster</th><th>sample message</th><th>lang</th><th>actionable</th><th>first seen</th><th>last seen</th><th>root cause</th></tr></thead><tbody>
+<tr><td class=num>1</td><td class=barcell><svg width=180 height=18 role=img aria-label='count bar'><rect x=0 y=2 width=150 height=14 rx=3 fill='#22d3ee'/><text x=156 y=14 class=bar>2x</text></svg></td><td class=mono>panic at src/parser.rs</td><td class=msg>called `Option::unwrap()` on a `None` value</td><td>rust</td><td class=mono>src/parser.rs:44 (&lt;panic&gt;)</td><td class=when>2025-02-14 09:52</td><td class=when>2025-02-14 09:52</td><td class=hintcell>-</td></tr>
+<tr><td class=num>2</td><td class=barcell><svg width=180 height=18 role=img aria-label='count bar'><rect x=0 y=2 width=150 height=14 rx=3 fill='#22d3ee'/><text x=156 y=14 class=bar>2x</text></svg></td><td class=mono>TypeError at srv/acme/handlers/checkout.js</td><td class=msg>Cannot read properties of undefined (reading &lt;value&gt;)</td><td>node</td><td class=mono>/srv/acme/handlers/checkout.js:8 (handleCheckout)</td><td class=when>2025-02-14 09:21</td><td class=when>2025-02-14 09:23</td><td class=hintcell>none-optional</td></tr>
+<tr><td class=num>3</td><td class=barcell><svg width=180 height=18 role=img aria-label='count bar'><rect x=0 y=2 width=150 height=14 rx=3 fill='#22d3ee'/><text x=156 y=14 class=bar>2x</text></svg></td><td class=mono>RuntimeError at srv/acme/app/pipeline.py</td><td class=msg>order enrichment failed for checkout</td><td>python</td><td class=mono>/srv/acme/app/pipeline.py:20 (pick_sku)</td><td class=when>2025-02-14 09:15</td><td class=when>2025-02-14 09:18</td><td class=hintcell>missing-key</td></tr>
+<tr><td class=num>4</td><td class=barcell><svg width=180 height=18 role=img aria-label='count bar'><rect x=0 y=2 width=75 height=14 rx=3 fill='#22d3ee'/><text x=81 y=14 class=bar>1x</text></svg></td><td class=mono>panic at acme/internal/queue/worker.go</td><td class=msg>runtime error: invalid memory address or nil pointer dereference</td><td>go</td><td class=mono>/srv/acme/internal/queue/worker.go:27 (acme/internal/queue.(*Worker).Run)</td><td class=when>2025-02-14 09:41</td><td class=when>2025-02-14 09:41</td><td class=hintcell>-</td></tr>
+<tr><td class=num>5</td><td class=barcell><svg width=180 height=18 role=img aria-label='count bar'><rect x=0 y=2 width=75 height=14 rx=3 fill='#22d3ee'/><text x=81 y=14 class=bar>1x</text></svg></td><td class=mono>NullPointerException at OrderService.java</td><td class=msg>Cannot invoke &lt;value&gt; because &lt;value&gt; is null</td><td>java</td><td class=mono>OrderService.java:8 (com.acme.OrderService.firstSku)</td><td class=when>2025-02-14 09:31</td><td class=when>2025-02-14 09:31</td><td class=hintcell>none-optional</td></tr>
+<tr><td class=num>6</td><td class=barcell><svg width=180 height=18 role=img aria-label='count bar'><rect x=0 y=2 width=75 height=14 rx=3 fill='#22d3ee'/><text x=81 y=14 class=bar>1x</text></svg></td><td class=mono>NullPointerException at OrderService.java</td><td class=msg>Cannot invoke &lt;value&gt; because &lt;value&gt; is null</td><td>java</td><td class=mono>OrderService.java:8 (com.acme.OrderService.firstSku)</td><td class=when>2025-02-14 09:31</td><td class=when>2025-02-14 09:31</td><td class=hintcell>none-optional</td></tr>
+</tbody></table></main>
+<footer>generated 2026-11-23T16:15:44 by crashlens 1.0.0</footer>
+</body></html>

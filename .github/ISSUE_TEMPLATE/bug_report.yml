@@ -1,0 +1,50 @@
+name: Bug report
+description: Something crashed, mis-parsed or printed the wrong thing
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for the report. Please redact secrets and personal data.
+  - type: input
+    id: version
+    attributes:
+      label: crashlens version
+      description: Output of `crashlens --version`
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version and OS
+      placeholder: "3.12.10 on Windows 11 / 3.11.9 on Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      render: shell
+      placeholder: crashlens annotate error.log --repo .
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      description: Paste the output, including the exit code.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Minimal log excerpt
+      description: The smallest traceback that reproduces it, redacted.
+      render: text
+    validations:
+      required: false

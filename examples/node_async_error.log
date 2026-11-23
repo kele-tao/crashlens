@@ -1,0 +1,11 @@
+2025-02-14 09:20:11 INFO  gateway listening on :8080
+2025-02-14 09:21:37,250 ERROR unhandled rejection in checkout route
+TypeError: Cannot read properties of undefined (reading 'sku')
+    at Array.map (<anonymous>)
+    at handleCheckout (/srv/acme/handlers/checkout.js:8:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-02-14 09:23:02,108 ERROR unhandled rejection in checkout route
+TypeError: Cannot read properties of undefined (reading 'sku')
+    at Array.map (<anonymous>)
+    at handleCheckout (/srv/acme/handlers/checkout.js:8:31)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)

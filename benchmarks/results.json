@@ -1,0 +1,55 @@
+{
+  "machine": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "AMD64",
+    "seed": 20260214,
+    "repeats": 5
+  },
+  "results": [
+    {
+      "blocks": 1000,
+      "bytes": 295319,
+      "lines": 7505,
+      "megabytes": 0.3,
+      "crashes": 1000,
+      "clusters": 6,
+      "best_ms": 72.9,
+      "median_ms": 74.5,
+      "throughput_mb_s": 4.1
+    },
+    {
+      "blocks": 1334,
+      "bytes": 394014,
+      "lines": 10013,
+      "megabytes": 0.39,
+      "crashes": 1334,
+      "clusters": 6,
+      "best_ms": 96.8,
+      "median_ms": 98.4,
+      "throughput_mb_s": 4.1
+    },
+    {
+      "blocks": 5000,
+      "bytes": 1476095,
+      "lines": 37508,
+      "megabytes": 1.48,
+      "crashes": 5000,
+      "clusters": 6,
+      "best_ms": 396.8,
+      "median_ms": 450.3,
+      "throughput_mb_s": 3.7
+    },
+    {
+      "blocks": 10000,
+      "bytes": 2951819,
+      "lines": 75005,
+      "megabytes": 2.95,
+      "crashes": 10000,
+      "clusters": 6,
+      "best_ms": 1015.3,
+      "median_ms": 1113.1,
+      "throughput_mb_s": 2.9
+    }
+  ]
+}

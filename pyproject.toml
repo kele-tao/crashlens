@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crashlens"
+version = "1.0.0"
+description = "Turn stack traces into root causes: parse five languages, cluster crashes by fingerprint, annotate the failing source with git blame and correlate crashes with recent deploys."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "kele", email = "guoshiyin0609@gmail.com" }]
+keywords = ["debugging", "stacktrace", "observability", "cli", "incident-response", "logs"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: System :: Logging",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+
+[project.scripts]
+crashlens = "crashlens.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kele-tao/crashlens"
+Issues = "https://github.com/kele-tao/crashlens/issues"
+Changelog = "https://github.com/kele-tao/crashlens/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4", "RET", "ARG", "PTH"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG001", "ARG002", "B011"]
+"benchmarks/*" = ["PTH"]
+"examples/*" = ["ALL"]

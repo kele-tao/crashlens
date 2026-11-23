@@ -1,0 +1,44 @@
+2025-02-14 09:12:44,101 INFO  order-api booting, 4 workers
+2025-02-14 09:15:02,338 WARN  partner payload took 812ms
+2025-02-14 09:15:03,004 ERROR request failed
+Traceback (most recent call last):
+  File "/srv/acme/app/http/handler.py", line 118, in handle_checkout
+    payload = enrich(body)
+  File "/srv/acme/app/pipeline.py", line 28, in enrich
+    return {"sku": pick_sku(document), "source": "checkout"}
+  File "/srv/acme/app/pipeline.py", line 20, in pick_sku
+    items = document["items"]
+KeyError: 'items'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/acme/app/http/handler.py", line 118, in handle_checkout
+    payload = enrich(body)
+  File "/srv/acme/app/pipeline.py", line 29, in enrich
+    except ValueError as exc:
+  File "/srv/acme/app/pipeline.py", line 30, in enrich
+    raise RuntimeError("order enrichment failed for checkout") from exc
+RuntimeError: order enrichment failed for checkout
+2025-02-14 09:15:03,120 INFO  request id 8f21a0 finished in 914ms
+2025-02-14 09:18:51,776 ERROR request failed
+Traceback (most recent call last):
+  File "/srv/acme/app/http/handler.py", line 118, in handle_checkout
+    payload = enrich(body)
+  File "/srv/acme/app/pipeline.py", line 28, in enrich
+    return {"sku": pick_sku(document), "source": "checkout"}
+  File "/srv/acme/app/pipeline.py", line 20, in pick_sku
+    items = document["items"]
+KeyError: 'items'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/acme/app/http/handler.py", line 118, in handle_checkout
+    payload = enrich(body)
+  File "/srv/acme/app/pipeline.py", line 29, in enrich
+    except ValueError as exc:
+  File "/srv/acme/app/pipeline.py", line 30, in enrich
+    raise RuntimeError("order enrichment failed for checkout") from exc
+RuntimeError: order enrichment failed for checkout
+2025-02-14 09:18:52,067 INFO  request id 2c07bd finished in 291ms
