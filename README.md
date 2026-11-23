@@ -50,7 +50,7 @@ already have on disk and answers both questions, offline.
 - **Maps 12 exception patterns to concrete next steps** (None on an optional,
   missing mapping key, malformed JSON, connection reset/timeout, OOM, recursion
   depth, missing pandas column, encoding, missing file, permissions, DB
-  constraints, index range) â€?`crashlens rules` prints the table.
+  constraints, index range) â€” `crashlens rules` prints the table.
 - **Annotates the source** with a context window and arrows around the failing
   line, plus git blame: author, date, commit subject, and how many days after
   that commit the first crash appeared.
@@ -230,7 +230,7 @@ assume "the last frame is where it blew up".
 six call sites per segment. The output is 12 hex characters and is stable across
 machines: the same bug from a container, a laptop and a CI runner lands in one
 cluster. Message values are redacted (`KeyError: <value>`), so two different
-missing keys with identical call sites do share a cluster â€?a deliberate
+missing keys with identical call sites do share a cluster â€” a deliberate
 trade-off, discussed below.
 
 **Annotation and blame** resolve frame paths against a checkout by exact
