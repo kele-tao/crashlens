@@ -69,8 +69,10 @@ cd crashlens
 pip install -e .
 ```
 
-Without installing, `python -m crashlens` works from the repository root after
-`pip install -e .` or with `PYTHONPATH=src`.
+Already cloned and just want to run the tests? `pytest -q` works from the
+repository root without installing anything (a root `conftest.py` puts `src/` on
+`sys.path`). To use the `crashlens` command or `python -m crashlens` outside the
+checkout, install with `pip install -e .` as above.
 
 ## Usage
 
