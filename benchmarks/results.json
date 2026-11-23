@@ -14,9 +14,9 @@
       "megabytes": 0.3,
       "crashes": 1000,
       "clusters": 6,
-      "best_ms": 72.9,
-      "median_ms": 74.5,
-      "throughput_mb_s": 4.1
+      "best_ms": 33.4,
+      "median_ms": 34.9,
+      "throughput_mb_s": 8.9
     },
     {
       "blocks": 1334,
@@ -25,9 +25,9 @@
       "megabytes": 0.39,
       "crashes": 1334,
       "clusters": 6,
-      "best_ms": 96.8,
-      "median_ms": 98.4,
-      "throughput_mb_s": 4.1
+      "best_ms": 46.0,
+      "median_ms": 49.8,
+      "throughput_mb_s": 8.6
     },
     {
       "blocks": 5000,
@@ -36,9 +36,9 @@
       "megabytes": 1.48,
       "crashes": 5000,
       "clusters": 6,
-      "best_ms": 396.8,
-      "median_ms": 450.3,
-      "throughput_mb_s": 3.7
+      "best_ms": 186.8,
+      "median_ms": 200.7,
+      "throughput_mb_s": 7.9
     },
     {
       "blocks": 10000,
@@ -47,9 +47,20 @@
       "megabytes": 2.95,
       "crashes": 10000,
       "clusters": 6,
-      "best_ms": 1015.3,
-      "median_ms": 1113.1,
-      "throughput_mb_s": 2.9
+      "best_ms": 377.1,
+      "median_ms": 386.2,
+      "throughput_mb_s": 7.8
+    },
+    {
+      "blocks": 17000,
+      "bytes": 5018095,
+      "lines": 127508,
+      "megabytes": 5.02,
+      "crashes": 17000,
+      "clusters": 6,
+      "best_ms": 1235.5,
+      "median_ms": 1270.4,
+      "throughput_mb_s": 4.1
     }
   ]
 }

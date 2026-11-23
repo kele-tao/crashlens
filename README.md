@@ -264,15 +264,16 @@ runs. Numbers below are from the committed `benchmarks/results.json`:
 
 | crash records | lines | input size | crashes parsed | clusters | best | median | MB/s |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1000 | 7505 | 0.3 MB | 1000 | 6 | 72.9 ms | 74.5 ms | 4.1 |
-| 1334 | 10013 | 0.39 MB | 1334 | 6 | 96.8 ms | 98.4 ms | 4.1 |
-| 5000 | 37508 | 1.48 MB | 5000 | 6 | 396.8 ms | 450.3 ms | 3.7 |
-| 10000 | 75005 | 2.95 MB | 10000 | 6 | 1015.3 ms | 1113.1 ms | 2.9 |
+| 1000 | 7505 | 0.3 MB | 1000 | 6 | 33.4 ms | 34.9 ms | 8.9 |
+| 1334 | 10013 | 0.39 MB | 1334 | 6 | 46.0 ms | 49.8 ms | 8.6 |
+| 5000 | 37508 | 1.48 MB | 5000 | 6 | 186.8 ms | 200.7 ms | 7.9 |
+| 10000 | 75005 | 2.95 MB | 10000 | 6 | 377.1 ms | 386.2 ms | 7.8 |
+| 17000 | 127508 | 5.02 MB | 17000 | 6 | 1235.5 ms | 1270.4 ms | 4.1 |
 
-A 10k-crash, 75k-line mixed log parses and clusters in about one second on a
-laptop (Python 3.12.10, Windows 11, AMD64). Cost is linear in lines; the parse
-phase dominates. The spec's 10k-line target is exceeded by an order of
-magnitude — 10k lines takes 97 ms.
+A 5 MB, 127k-line log holding 17,000 crash records parses and clusters in 1.24 s;
+a 10k-line log takes 46 ms. Cost is linear in lines and the parse phase
+dominates, so a log file costs about 240 ns per line on this laptop
+(Python 3.12.10, Windows 11, AMD64).
 
 ## Comparison
 

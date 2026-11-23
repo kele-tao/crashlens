@@ -137,7 +137,9 @@ def main() -> int:
         "seed": SEED,
         "repeats": REPEATS,
     }
-    results = [measure(blocks) for blocks in (1000, 1334, 5000, 10000)]
+    # 1334 blocks ~ 10k lines, 17000 blocks ~ 5 MB: the two sizes the project
+    # spec names explicitly.
+    results = [measure(blocks) for blocks in (1000, 1334, 5000, 10000, 17000)]
     payload = {"machine": machine, "results": results}
     out = ROOT / "benchmarks" / "results.json"
     out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
